@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать QR-код о вакцинации</title>
+</head>
+<body>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    
+    <form action="" method="post">
+        <p>
+	    <label for="fio">ФИО</label>
+	    <input type="text" name="fio">
+	</p>
+	<p>
+		<label for="month">Месяц рождения</label>
+		<input type="search" list="character" name="month">
+			<datalist id="character">
+				<option value="января"></option>
+				<option value="феврвля"></option>
+				<option value="марта"></option>
+				<option value="апреля"></option>
+				<option value="мая"></option>
+				<option value="июня"></option>
+				<option value="июля"></option>
+				<option value="августа"></option>
+				<option value="сентября"></option>
+				<option value="октября"></option>
+				<option value="ноября"></option>
+				<option value="декабря"></option>
+			</datalist>
+	</p>
+	<p>
+	    <label for="day">День рождения</label>
+	    <input type="number" name="day">
+	</p>
+	<p>
+	    <input type="submit">
+	</p>
+    </form>
+    
+</body>
+</html>
