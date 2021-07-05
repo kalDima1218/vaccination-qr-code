@@ -50,6 +50,5 @@ app.config['QR_FOLDER'] = QR_FOLDER
 
 
 socketio = SocketIO()
-app.config['SECRET_KEY'] = 'gjr39dkjn344_!67#'
 socketio.init_app(app)
 socketio.run(app, host="immune.mos.tmweb.ru")
