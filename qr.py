@@ -6,7 +6,7 @@ from flask_socketio import SocketIO
 from flask import Flask, request, render_template, send_file
 
 app = Flask(__name__)
-app.debug = True
+app.debug = False
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -43,10 +43,6 @@ def index():
 def qr():
     id = request.args.get("id")
     return render_template("qr-" + id + ".html")
-
-
-QR_FOLDER = os.path.join('static')
-app.config['QR_FOLDER'] = QR_FOLDER
 
 
 socketio = SocketIO()
