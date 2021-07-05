@@ -6,33 +6,55 @@
     <title>Проверить наличие QR-кода о вакцинации </title>
     <style>
 		h1{ 
-			font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-size: 40px; font-weight: 400; line-height: 1px;
+			font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-size: 40px; font-weight: 400; line-height: 35px;
 		}
-		@media (max-width:850px) {
-			h1{ 
-				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-size: 35px; font-weight: 400; line-height: 30px;
+		input[type=text] {
+			font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
+			width: 320px; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;
+		}
+		input[type=search] {
+			font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
+			width: 327px; height: 60px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;
+		} 
+		input[type=number] {
+			font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
+			width: 320px; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;
+		}
+		input[type=submit] {
+			font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
+			width: 320px; height: 50px; background-color: #3888cf; color: #fff; border-radius: 2px; border: 2px solid #3888cf; display: block; margin: 0 auto; font-size: 20px;
+		}
+		@media (max-width:320px) {
+			input[type=text] {
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
+				width: 95%; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;
+			}
+			input[type=search] {
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
+				width: 97%; height: 60px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;
+			} 
+			input[type=number] {
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
+				width: 95%; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;
+			}
+			input[type=submit] {
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
+				width: 95%; height: 50px; background-color: #3888cf; color: #fff; border-radius: 2px; border: 2px solid #3888cf; display: block; margin: 0 auto; font-size: 20px;
 			}
 		}
         p {
             font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
         }
-		input {
-			font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-weight: 400; line-height: 1px;
-		}
 	</style>
 </head>
 <body>
     <h1 align="center">Проверить QR-код вакцинированного</h1>
-    {% if message %}
-        <p align="center">{{ message }}</p>
-    {% endif %}
-    
     <form action="" method="post">
     <p>
-	    <input type="text" placeholder="Введите ФИО" style="width: 95%; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;" name="fio">
+	    <input type="text" placeholder="Введите ФИО" name="fio">
 	</p>
 	<p>
-		<input type="search" placeholder="Выберите месяц" list="character" style="width: 96%; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;" name="month">
+		<input type="search" placeholder="Выберите месяц" list="character" name="month">
 			<datalist id="character">
 				<option value="января"></option>
 				<option value="феврвля"></option>
@@ -49,10 +71,10 @@
 			</datalist>
 	</p>
 	<p>
-	    <input type="number" placeholder="Введите день" style="width: 95%; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px; " name="day">
+	    <input type="number" placeholder="Введите день" name="day">
 	</p>
 	<p>
-	    <input type="submit" style="width: 95%; height: 50px; background-color: #3888cf; color: #fff; border-radius: 2px; border: 2px solid #3888cf; display: block; margin: 0 auto; font-size: 20px;" value="Проверить">
+	    <input type="submit" value="Проверить">
 	</p>
     </form>
     
