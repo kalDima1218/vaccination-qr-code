@@ -33,9 +33,9 @@ def index():
             return send_file(file_qr, as_attachment=True, mimetype='image/png')
         else:
             message = "Данные введены неверно"
-            return render_template('index.html', message=message)
+            return render_template('index.html')
     else:
-        return render_template('index.html', message=message)
+        return render_template('index.html')
 
 
 @app.route('/qr')
