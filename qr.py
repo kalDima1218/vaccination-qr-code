@@ -1,5 +1,4 @@
 import os
-import time
 import hashlib
 import pyqrcode
 from flask_socketio import SocketIO
