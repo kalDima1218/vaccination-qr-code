@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.35">
-    <title>Создать QR-код о вакцинации</title>
+    <title>Проверить наличие QR-кода о вакцинации </title>
     <style>
 		h1{ 
 			font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif; font-size: 40px; font-weight: 400; line-height: 1px;
@@ -22,19 +22,17 @@
 	</style>
 </head>
 <body>
-    <h1>Создать QR-код вакцинированного</h1>
+    <h1 align="center">Проверить QR-код вакцинированного</h1>
     {% if message %}
-        <p>{{ message }}</p>
+        <p align="center">{{ message }}</p>
     {% endif %}
     
     <form action="" method="post">
     <p>
-	    <label for="fio">ФИО</label>
-	    <input type="text" name="fio">
+	    <input type="text" placeholder="Введите ФИО" style="width: 95%; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;" name="fio">
 	</p>
 	<p>
-		<label for="month">Месяц рождения</label>
-		<input type="search" list="character" name="month">
+		<input type="search" placeholder="Выберите месяц" list="character" style="width: 96%; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px;" name="month">
 			<datalist id="character">
 				<option value="января"></option>
 				<option value="феврвля"></option>
@@ -51,11 +49,10 @@
 			</datalist>
 	</p>
 	<p>
-	    <label for="day">День рождения</label>
-	    <input type="number" name="day">
+	    <input type="number" placeholder="Введите день" style="width: 95%; height: 55px; background-color: #fff; border-radius: 2px; border: 1px solid #a8a8a8; display: block; margin: 0 auto; font-size: 15px; " name="day">
 	</p>
 	<p>
-	    <input type="submit" style="width: 90px; height: 25px; font-size: 15px;" value="Получить">
+	    <input type="submit" style="width: 95%; height: 50px; background-color: #3888cf; color: #fff; border-radius: 2px; border: 2px solid #3888cf; display: block; margin: 0 auto; font-size: 20px;" value="Проверить">
 	</p>
     </form>
     
