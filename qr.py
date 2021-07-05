@@ -15,18 +15,21 @@ def index():
         fio = request.form.get('fio')
         month = request.form.get('month')
         day = request.form.get('day')
+        user_key = request.form.get('key')
+        with open(os.getcwd().replace("\\", "/") + "/key.txt", "r") as f:
+            original_key = f.readline()
 
-        if len(fio.split(" ")) == 3 and (int(day) > 0 and int(day) < 32):
+        if user_key == original_key and len(fio.split(" ")) == 3 and (int(day) > 0 and int(day) < 32):
             message = "Все данные введены верно, QR-код создан"
             first_name = fio.split()[0][0] + ((len(fio.split()[0]) - 1) * "*")
             second_name = fio.split()[1][0] + ((len(fio.split()[1]) - 1) * "*")
             patronymic = fio.split()[2][0] + ((len(fio.split()[2]) - 1) * "*")
             date = day + " " + month
             hash = hashlib.sha256((fio + " " + date).encode('utf-8')).hexdigest()[:12].upper()
-            file_qr = os.getcwd() + "/templates/static/" + 'qr-' + hash + '.png'
-            file_html = os.getcwd() + "/templates/static/" + 'qr-' + hash + '.html'
+            file_qr = os.getcwd().replace("\\", "/") + "/templates/static/" + 'qr-' + hash + '.png'
+            file_html = os.getcwd().replace("\\", "/") + "/templates/static/" + 'qr-' + hash + '.html'
             if not os.path.exists(file_qr):
-                with open(os.getcwd() + "/templates/static/demo.html", "r") as f:
+                with open(os.getcwd().replace("\\", "/") + "/templates/static/demo.html", "r") as f:
                     demo_html = f.readline()
                 with open(file_html, "w") as f:
                     f.write(demo_html.replace("Имя", first_name).replace("Фамилия", second_name).replace("Отчество", patronymic).replace("дата", date))
