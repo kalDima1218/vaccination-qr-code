@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Создать QR-код о вакцинации</title>
+    <style>
+        @font-face {
+            font-family: DOCKER; /* Гарнитура шрифта */
+            src: url(fonts/docker-one.ttf); /* Путь к файлу со шрифтом */
+        }
+        h1 {
+            font-family: DOCKER, 'DOCKER ONE', ONE;
+        }
+        p {
+            font-family: DOCKER, 'DOCKER ONE', ONE;
+        }
+  </style>
 </head>
 <body>
-
+    <h1>Создать QR-код вакцинированного</h1>
     {% if message %}
         <p>{{ message }}</p>
     {% endif %}
@@ -38,7 +50,7 @@
 	    <input type="number" name="day">
 	</p>
 	<p>
-	    <input type="submit">
+	    <input type="submit" value="Получить">
 	</p>
     </form>
     
