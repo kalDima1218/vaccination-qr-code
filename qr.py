@@ -18,7 +18,6 @@ def index():
         user_key = request.form.get('key')
         with open(os.getcwd() + "/key.txt", "r") as f:
             original_key = f.readline()
-        print(user_key, original_key)
 
         if user_key == original_key and len(fio.split(" ")) == 3 and (int(day) > 0 and int(day) < 32):
             message = "Все данные введены верно, QR-код создан"
@@ -31,7 +30,7 @@ def index():
             file_html = os.getcwd() + "/templates/static/html/" + 'qr-' + hash + '.html'
             if not os.path.exists(file_qr):
                 with open(os.getcwd() + "/templates/static/html/qr-demo.html", "r") as f:
-                    demo_html = f.readline()
+                    demo_html = f.read()
                 with open(file_html, "w") as f:
                     f.write(demo_html.replace("Имя", first_name).replace("Фамилия", second_name).replace("Отчество", patronymic).replace("дата", date))
                 url = pyqrcode.create("http://immune.mos.tmweb.ru:5000/qr?id=" + hash)
