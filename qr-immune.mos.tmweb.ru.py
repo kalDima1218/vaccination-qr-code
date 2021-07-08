@@ -33,7 +33,7 @@ def index():
                     demo_html = f.read()
                 with open(file_html, "w") as f:
                     f.write(demo_html.replace("Имя", first_name).replace("Фамилия", second_name).replace("Отчество", patronymic).replace("дата", date))
-                url = pyqrcode.create("http://immune.mos.tmweb.ru:5000/qr?id=" + hash)
+                url = pyqrcode.create("https://immune.mos.tmweb.ru:5000/qr?id=" + hash)
                 url.png(file_qr, scale=5)
             return send_file(file_qr, as_attachment=True, mimetype='image/png')
         else:
@@ -49,6 +49,7 @@ def qr():
     return render_template("/static/html/qr-" + id + ".html")
 
 
-socketio = SocketIO()
-socketio.init_app(app)
-socketio.run(app, host="immune.mos.tmweb.ru")
+#socketio = SocketIO()
+#socketio.init_app(app)
+#socketio.run(app, host="immune.mos.tmweb.ru", ssl_context=('cert.pem', 'privkey.pem'))
+app.run(host="immune.mos.tmweb.ru", ssl_context=('cert-immune.mos.tmweb.ru.pem', 'privkey-immune.mos.tmweb.ru.pem'))
