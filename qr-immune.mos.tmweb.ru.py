@@ -19,7 +19,7 @@ def index():
         with open(os.getcwd() + "/key.txt", "r") as f:
             original_key = f.readline()
 
-        if user_key == original_key and len(fio.split(" ")) == 3 and (int(day) > 0 and int(day) < 32):
+        if user_key == original_key and len(fio.split(" ")) == 3 and (int(day) > 0 and int(day) < 32) and month != "Выберите месяц рождения":
             message = "Все данные введены верно, QR-код создан"
             first_name = fio.split()[0][0] + ((len(fio.split()[0]) - 1) * "*")
             second_name = fio.split()[1][0] + ((len(fio.split()[1]) - 1) * "*")
