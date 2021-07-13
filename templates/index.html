@@ -6,69 +6,43 @@
 	<link rel="shortcut icon" type="image/x-icon" href="https://www.mos.ru/static/images/favicon/favicon.ico">
     <title>Найти QR-код о вакцинации </title>
     <style>
-        p { font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;}
-		input[type=text] {
-			font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;
-			width:291px;height:15px;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;
-		}
-		input[type=search] {
-			font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;
-			width:328px;height:50px;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;
-		} 
-		input[type=number] {
-			font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;
-			width:291px;height:15px;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;
-		}
-		input[type=submit] {
-			font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;
-			width:320px;height:50px;background-color:#3888cf;color:#fff;border-radius:14px;border:2px solid #3888cf;display:block;margin:0 auto;font-size:20px;
-		}
+		h1 {font-family:'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic';font-size:40px;font-weight:400;line-height:30px;margin-top:0}
+		h5 {font-family:'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic';font-size:15px;font-weight:400;line-height:15px;margin-top:-15px}
+		input[type=text], input[type=number] {font-family:"Franklin Gothic Medium","Franklin Gothic";width:291px;height:15px;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;}
+		select, option {font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic";width:328px;height:50px;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding-left:1rem;}
+		input[type=submit] {font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic";width:260px;height:45px;background-color:#3888cf;color:#fff;border-radius:14px;border:2px solid #3888cf;display:block;margin:0 auto;font-size:20px;}
 		@media (max-width:320px) {
-			input[type=text] {
-				font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;
-				width:95%;height:10%;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;
-			}
-			input[type=search] {
-				font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;
-				width:107%;height:12%;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;
-			} 
-			input[type=number] {
-				font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;
-				width:95%;height:10%;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;
-			}
-			input[type=submit] {
-				font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;font-weight:400;line-height:1px;
-				width:95%;height:50px;background-color:#3888cf;color:#fff;border-radius:14px;border:2px solid #3888cf;display:block;margin:0 auto;font-size:20px;
-			}
+			input[type=text], input[type=number] {font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic";width:95%;height:10%;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;}
+			select, option {font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic";width:107%;height:12%;background-color:#fff;border-radius:14px;border:2px solid #a8a8a8;display:block;margin:0 auto;font-size:15px;padding:1rem;} 
+			input[type=submit] {font-family:"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic";width:95%;height:45px;background-color:#3888cf;color:#fff;border-radius:14px;border:2px solid #3888cf;display:block;margin:0 auto;font-size:20px;}
 		}
 	</style>
 </head>
 <body>
 	<form action="" method="post" style="margin: 7% 0px;">
-		<h1 align="center" style="font-family:'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic',Arial,sans-serif;font-size:40px;font-weight:400;line-height:30px;margin-top:0px">Найти QR-код о вакцинации</h1>
-		<h5 align="center" style="font-family:'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic',Arial,sans-serif;font-size:15px;font-weight:400;line-height:15px;margin-top:-15px">На этом сайте вы можете найти (а может и нет) свой QR-код о вакцинации</h5>
+		<h1 align="center">Найти QR-код о вакцинации</h1>
+		<h5 align="center">На этом сайте вы можете найти (а может и нет) свой QR-код о вакцинации</h5>
 		<p>
 			<input type="text" placeholder="Введите ФИО" name="fio">
 		</p>
 		<p>
-			<input type="search" placeholder="Введите месяц рождения" list="character" name="month">
-				<datalist id="character">
-					<option value="января"></option>
-					<option value="февраля"></option>
-					<option value="марта"></option>
-					<option value="апреля"></option>
-					<option value="мая"></option>
-					<option value="июня"></option>
-					<option value="июля"></option>
-					<option value="августа"></option>
-					<option value="сентября"></option>
-					<option value="октября"></option>
-					<option value="ноября"></option>
-					<option value="декабря"></option>
-				</datalist>
+			<select name="month">
+				<option value="января">Январь</option>
+				<option value="февраля">Февраль</option>
+				<option value="марта">Март</option>
+				<option value="апреля">Апрель</option>
+				<option value="мая">Май</option>
+				<option value="июня">Июнь</option>
+				<option value="июля">Июль</option>
+				<option value="августа">Август</option>
+				<option value="сентября">Сентябрь</option>
+				<option value="октября">Октябрь</option>
+				<option value="ноября">Ноябрь</option>
+				<option value="декабря">Декабрь</option>
+			</select>
 		</p>
 		<p>
-			<input type="number" placeholder="Введите день рождения" name="day">
+			<input type="number" min="0" max="100" placeholder="Введите день рождения" name="day">
 		</p>
 		<p>
 			<input type="text" placeholder="Введите секретный код" name="key">
