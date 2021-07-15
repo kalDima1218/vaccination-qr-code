@@ -18,7 +18,6 @@ def index():
         user_key = request.form.get('key')
         with open(os.getcwd() + "/key.txt", "r") as f:
             original_key = f.readline()
-
         if user_key == original_key and len(fio.split(" ")) == 3 and (int(day) > 0 and int(day) < 32) and month != "Выберите месяц рождения":
             message = "Все данные введены верно, QR-код создан"
             first_name = fio.split()[0][0] + ((len(fio.split()[0]) - 1) * "*")
@@ -51,5 +50,5 @@ def qr():
 
 #socketio = SocketIO()
 #socketio.init_app(app)
-#socketio.run(app, host="immune.mos.tmweb.ru", ssl_context=('cert.pem', 'privkey.pem'))
-app.run(host="immune.mos.tmweb.ru", ssl_context=('cert-immune.mos.tmweb.ru.pem', 'privkey-immune.mos.tmweb.ru.pem'))
+#socketio.run(app, host="immune.mos.tmweb.ru")
+app.run(host="immune.mos.tmweb.ru", ssl_context=('cert.pem', 'privkey.pem'))
