@@ -1,7 +1,7 @@
 import os
 import hashlib
 import pyqrcode
-from flask_socketio import SocketIO
+#from flask_socketio import SocketIO
 from flask import Flask, request, render_template, send_file
 
 app = Flask(__name__)
@@ -10,16 +10,16 @@ app.debug = False
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    message = ''
+    #message = ''
     if request.method == 'POST':
         fio = request.form.get('fio')
         month = request.form.get('month')
         day = request.form.get('day')
-        user_key = request.form.get('key')
-        with open(os.getcwd() + "/key.txt", "r") as f:
-            original_key = f.readline()
-        if user_key == original_key and len(fio.split(" ")) == 3 and (int(day) > 0 and int(day) < 32) and month != "Выберите месяц рождения":
-            message = "Все данные введены верно, QR-код создан"
+        #user_key = request.form.get('key')
+        #with open(os.getcwd() + "/key.txt", "r") as f:
+            #original_key = f.readline()
+        if len(fio.split(" ")) == 3 and (int(day) > 0 and int(day) < 32) and month != "Выберите месяц рождения": #user_key == original_key
+            #message = "Все данные введены верно, QR-код создан"
             first_name = fio.split()[0][0] + ((len(fio.split()[0]) - 1) * "*")
             second_name = fio.split()[1][0] + ((len(fio.split()[1]) - 1) * "*")
             patronymic = fio.split()[2][0] + ((len(fio.split()[2]) - 1) * "*")
@@ -36,7 +36,7 @@ def index():
                 url.png(file_qr, scale=5)
             return send_file(file_qr, as_attachment=True, mimetype='image/png')
         else:
-            message = "Данные введены неверно"
+            #message = "Данные введены неверно"
             return render_template('index.html')
     else:
         return render_template('index.html')
