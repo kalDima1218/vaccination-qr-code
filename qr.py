@@ -2,11 +2,11 @@ import os
 import base64
 import hashlib
 import pyqrcode
-from flask_socketio import SocketIO
+#from flask_socketio import SocketIO
 from flask import Flask, request, render_template, send_file
 
 app = Flask(__name__)
-app.debug = True
+app.debug = False
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -47,7 +47,7 @@ def qr():
     return render_template("qr-demo.html", message=data)
 
 
-socketio = SocketIO()
-socketio.init_app(app)
-socketio.run(app, host="immune.mos.tmweb.ru")
-#app.run(host="immune.mos.tmweb.ru", ssl_context=('cert.pem', 'privkey.pem'))
+#socketio = SocketIO()
+#socketio.init_app(app)
+#socketio.run(app, host="immune.mos.tmweb.ru")
+app.run(host="immune.mos.tmweb.ru", ssl_context=('cert.pem', 'privkey.pem'))
