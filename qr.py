@@ -28,9 +28,9 @@ def index():
             file_qr = os.getcwd() + "/qr-" + hash + ".png"
             url = pyqrcode.create("https://immune.mos.tmweb.ru:5000/qr?id=" + hash)
             url.png(file_qr, scale=5)
-            var = send_file(file_qr, as_attachment=True, mimetype='image/png')
+            file = send_file(file_qr, as_attachment=True, mimetype='image/png')
             os.remove(file_qr)
-            return var
+            return file
         else:
             return render_template('index.html', lh='30px', error_message='Данные введены неверно')
     else:
